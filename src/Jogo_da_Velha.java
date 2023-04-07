@@ -58,6 +58,7 @@ public class Jogo_da_Velha {
                 break;
             }
 
+            // Da empate se 9 jogadas forem feitas ou seja o tabuleiro todo preenchido
             if (jogadas == 9) {
                 System.out.println("Empate!");
                 break;
@@ -68,8 +69,18 @@ public class Jogo_da_Velha {
     }
 
 
+    public static void inicia_jogo() {
 
+        /** System.out.println("Bem-vindo ao jogo da velha, desenvolvido por Eliel e Carlos");
+        System.out.println("Informe o nome dos jogadores");
+        System.out.println("Jogador 1 (X): ");
+        jogadores[0] = entrada.nextLine();
+        System.out.println("Jogador 2 (O): ");
+        jogadores[1] = entrada.nextLine();
+        System.out.println();
+        exibe_tabuleiro(tabu); */
 
+    }
 
 
     public static void exibe_tabuleiro(int[][] tabu) {

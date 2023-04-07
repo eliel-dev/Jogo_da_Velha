@@ -14,7 +14,7 @@ public class Teste {
         int vezDoJogador = 0;
         int jogadas = 0;
 
-        inicia_jogo(jogadores);
+        //inicia_jogo(jogadores);
 
         //"Melhorar", loop de jogo enquanto ainda não ganhou ou deu empate
         while (true){
