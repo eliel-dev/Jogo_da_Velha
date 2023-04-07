@@ -31,20 +31,20 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last.edited.regexp": "Sample Text",
-    "last_opened_file_path": "C:/Users/Dev/Documents/GitHub/Java/Jogo_do_Velho"
+    "last_opened_file_path": "C:/Users/Dev/Documents/GitHub/Java/Jogo_da_Velha"
   }
 }]]></component>
   <component name="RunManager" selected="Application.Jogo_da_Velha">
     <configuration name="Jogo_da_Velha" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Jogo_da_Velha" />
-      <module name="Jogo_do_Velho" />
+      <module name="Jogo_da_Velha" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Teste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Teste" />
-      <module name="Jogo_do_Velho" />
+      <module name="Jogo_da_Velha" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
