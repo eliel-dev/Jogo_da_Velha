@@ -47,7 +47,7 @@ public class Jogo_da_Velha {
             }
 
             //Preenche a matriz com linha e coluna escolhida. Como é uma matriz de inteiro, posições não marcadas estão simbolizadas com 0.
-            //Para marcar corretamente casa escolhida pelo player1(1 || X) ou pelo player2(2 || O) é somado +1 ao "vezDoJogador" alternando entre (1 || X) e (2 || O)
+            //Para marcar corretamente casa escolhida pelo player1 (1 || X) ou pelo player2 (2 || O) é somado +1 ao "vezDoJogador" alternando entre (1 || X) e (2 || O)
             tabu[linha][coluna] = vezDoJogador + 1;
 
             //Incrementa num de jogadas, onde o limite vai ser até 9
@@ -60,13 +60,13 @@ public class Jogo_da_Velha {
                 System.out.println(jogadores[vezDoJogador] + " ganhou!");
                 break;
             }
-            //Limite de 9 jogadas, resultado em todos campos preenchidos
+            //Limite de 9 jogadas, resultado em todos os campos preenchidos
             if (jogadas == 9) {
                 System.out.println("Empate!");
                 break;
             }
 
-            //Operador ternário: condição? valor se for verdareiro : valor se for falso // se vezDoJogador for 1 ele troca para 0 e vice-versa
+            //Operador ternário: condição? valor se for verdadeiro : valor se for falso // se vezDoJogador for 1 ele troca para 0 e vice-versa
             vezDoJogador = vezDoJogador == 0 ? 1 : 0;
         }
     }
