@@ -19,13 +19,12 @@ public class Teste {
         jogadores[0]  = entrada.nextLine();
         System.out.println("Jogador 2 (O): ");
         jogadores[1] = entrada.nextLine();
-        System.out.println();
 
 
         //"Melhorar", loop de jogo enquanto ainda não ganhou ou deu empate
-        System.out.println("Deseja iniciar o jogo?");
+        System.out.print("Precione qualquer tecla para iniciar");
         String resposta = entrada.nextLine();
-        while (!resposta.equalsIgnoreCase("Não")|!resposta.equalsIgnoreCase ("N")| !resposta.equalsIgnoreCase("Nao")){
+        while (!resposta.equalsIgnoreCase("Não")){
 
             System.out.println();
             exibe_tabuleiro(tabu);
@@ -48,7 +47,8 @@ public class Teste {
                 continue;
             }
 
-            //Preenche a matriz com linha e coluna escolhida, vezDoJogador alterna entre jogador 1 e 2
+            //Preenche a matriz com linha e coluna escolhida. Como é uma matriz de inteiro, posições não marcadas estão simbolizadas com 0.
+            //Para marcar corretamente casa escolhida pelo player1(1 || X) ou pelo player2(2 || O) é somado +1 ao "vezDoJogador" alternando entre (1 || X) e (2 || O)
             tabu[linha][coluna] = vezDoJogador + 1;
 
             //Incrementa num de jogadas, onde o limite vai ser até 9
@@ -57,20 +57,20 @@ public class Teste {
             exibe_tabuleiro(tabu);
 
 
-            if (verificarVencedor(tabu, vezDoJogador + 1)) {
+            if (verifica_campos_preenchidos(tabu)) {
                 System.out.println(jogadores[vezDoJogador] + " ganhou!");
-                continue;
+                break;
             }
+            //Limite de 9 jogadas, resultado em todos campos preenchidos
             if (jogadas == 9) {
                 System.out.println("Empate!");
-                continue;
+                break;
             }
 
-            vezDoJogador = (vezDoJogador == 0) ? 1 : 0;
+            //Operador ternário: condição? valor se for verdareiro : valor se for falso // se vezDoJogador for 1 ele troca para 0 e vice-versa
+            vezDoJogador = vezDoJogador == 0 ? 1 : 0;
         }
     }
-
-
 
 
     //Desenha tabuleiro trocando 1 por X e 2 por O, deixando campos não preenchidos com "-"
@@ -96,17 +96,17 @@ public class Teste {
 
 
 
-    //Verifica vencedor analisando cada linha, coluna e diagonais / Recebe por parametro a matriz e o jogador a ser analisado
-    public static boolean verificarVencedor(int[][] tabu, int jogador) {
+    //Verifica vencedor analisando cada linha, coluna e diagonais / Recebe por parametro o estado atual da matriz
+    public static boolean verifica_campos_preenchidos(int[][] tabu) {
         // For para verificar cada linha
         for (int i = 1; i < tabu.length; i++) {
-            if (tabu[i][2] != 0 && tabu[i][1] == tabu[i][2] && tabu[i][2] == tabu[i][3]) {
+            if (tabu[i][i] != 0 && tabu[i][1] == tabu[i][2] && tabu[i][2] == tabu[i][3]) {
                 return true;
             }
         }
         // For para verificar cada coluna
         for (int i = 1; i < tabu.length; i++) {
-            if (tabu[1][i] != 0 && tabu[1][i] == tabu[2][i] && tabu[2][i] == tabu[3][i]) {
+            if (tabu[i][i] != 0 && tabu[1][i] == tabu[2][i] && tabu[2][i] == tabu[3][i]) {
                 return true;
             }
         }
@@ -115,9 +115,6 @@ public class Teste {
             return true;
         }
         // Verificar diagonal secundária
-        if (tabu[1][3] != 0 && tabu[1][3] == tabu[2][2] && tabu[2][2] == tabu[3][1]) {
-            return true;
-        }
-        return false;
+        return tabu[1][3] != 0 && tabu[1][3] == tabu[2][2] && tabu[2][2] == tabu[3][1];
     }
 }
