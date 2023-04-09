@@ -21,16 +21,16 @@ public class Jogo_da_Velha {
 
 
         //"Melhorar", loop de jogo enquanto ainda não ganhou ou deu empate
-        System.out.print("Precione qualquer tecla para iniciar");
+        System.out.print("Precione enter para iniciar");
         String resposta = entrada.nextLine();
         while (!resposta.equalsIgnoreCase("Não")){
 
             System.out.println();
             exibe_tabuleiro(tabu);
-            System.out.println(jogadores[vezDoJogador] + ", faça sua jogada:");
-            System.out.print("Linha(L): ");
+            System.out.println(jogadores[vezDoJogador] + ", faça sua jogada.");
+            System.out.print("Informe numero da linha(L): ");
             int linha = entrada.nextInt();
-            System.out.print("Coluna(C): ");
+            System.out.print("Informe numero da coluna(C): ");
             int coluna = entrada.nextInt();
 
 
@@ -53,8 +53,6 @@ public class Jogo_da_Velha {
             //Incrementa num de jogadas, onde o limite vai ser até 9
             jogadas++;
 
-            exibe_tabuleiro(tabu);
-
 
             if (verifica_campos_preenchidos(tabu)) {
                 System.out.println(jogadores[vezDoJogador] + " ganhou!");
@@ -74,10 +72,11 @@ public class Jogo_da_Velha {
 
     //Desenha tabuleiro trocando 1 por X e 2 por O, deixando campos não preenchidos com "-"
     public static void exibe_tabuleiro(int[][] tabu) {
-        System.out.println("Tabuleiro: ");
-        System.out.println("   C1 C2 C3");
+        System.out.println("Tabuleiro:");
+        System.out.println("*****************");
+        System.out.println("\tC1 C2 C3 \t");
         for (int i = 1; i < tabu.length; i++) {
-            System.out.print("L" + i + "|");
+            System.out.print(" L" + i + "|");
             for (int j = 1; j < tabu.length; j++) {
                 if (tabu[i][j] == 1) {
                     System.out.print(" X ");
@@ -89,6 +88,7 @@ public class Jogo_da_Velha {
             }
             System.out.println();
         }
+        System.out.println("*****************");
         System.out.println("L = Linha.");
         System.out.println("C = Coluna.");
     }
