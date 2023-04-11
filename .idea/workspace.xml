@@ -26,14 +26,14 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last.edited.regexp": "Sample Text",
-    "last_opened_file_path": "C:/Users/Dev/Documents/projetos_dev/Outras_pessoas/jogo-da-velha-em-java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last.edited.regexp&quot;: &quot;Sample Text&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Dev/Documents/projetos_dev/Outras_pessoas/jogo-da-velha-em-java&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Jogo_da_Velha" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Jogo_da_Velha" />

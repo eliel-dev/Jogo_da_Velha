@@ -12,8 +12,10 @@ public class Jogo_da_Velha {
         int vezDoJogador = 0;
         int jogadas = 0;
 
-        System.out.println("Bem-vindo ao jogo da velha, desenvolvido por Eliel e Carlos");
-        System.out.println("Informe o nome dos jogadores");
+        System.out.println("***************************************************************");
+        System.out.println("* Bem-vindo ao jogo da velha, desenvolvido por Eliel e Carlos *");
+        System.out.println("***************************************************************\n");
+        System.out.println("Informe o nome dos jogadores e pressione enter para confirmar. ");
         System.out.println("Jogador 1 (X): ");
         jogadores[0]  = entrada.nextLine();
         System.out.println("Jogador 2 (O): ");
@@ -21,13 +23,13 @@ public class Jogo_da_Velha {
 
 
         //"Melhorar", loop de jogo enquanto ainda não ganhou ou deu empate
-        System.out.print("Precione enter para iniciar");
+        System.out.print("Pressione enter para iniciar");
         String resposta = entrada.nextLine();
         while (!resposta.equalsIgnoreCase("Não")){
 
             System.out.println();
             exibe_tabuleiro(tabu);
-            System.out.println(jogadores[vezDoJogador] + ", faça sua jogada.");
+            System.out.println(jogadores[vezDoJogador] + ", digite um sua jogada e pressione enter para confirmar.");
             System.out.print("Informe numero da linha(L): ");
             int linha = entrada.nextInt();
             System.out.print("Informe numero da coluna(C): ");

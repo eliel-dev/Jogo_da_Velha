@@ -6,7 +6,7 @@ public class Teste {
         // Le as entradas digitadas pelo user
         Scanner entrada = new Scanner(System.in);
 
-        //Vetor que representa o tabu
+        //Vetor que representa o tabuleiro
         int[][] tabu = new int[4][4];
         String[] jogadores = new String[2];
 
@@ -22,16 +22,16 @@ public class Teste {
 
 
         //"Melhorar", loop de jogo enquanto ainda não ganhou ou deu empate
-        System.out.print("Precione qualquer tecla para iniciar");
+        System.out.print("Precione enter para iniciar");
         String resposta = entrada.nextLine();
         while (!resposta.equalsIgnoreCase("Não")){
 
             System.out.println();
             exibe_tabuleiro(tabu);
-            System.out.println(jogadores[vezDoJogador] + ", faça sua jogada:");
-            System.out.print("Linha(L): ");
+            System.out.println(jogadores[vezDoJogador] + ", faça sua jogada.");
+            System.out.print("Informe numero da linha(L): ");
             int linha = entrada.nextInt();
-            System.out.print("Coluna(C): ");
+            System.out.print("Informe numero da coluna(C): ");
             int coluna = entrada.nextInt();
 
 
@@ -48,26 +48,24 @@ public class Teste {
             }
 
             //Preenche a matriz com linha e coluna escolhida. Como é uma matriz de inteiro, posições não marcadas estão simbolizadas com 0.
-            //Para marcar corretamente casa escolhida pelo player1(1 || X) ou pelo player2(2 || O) é somado +1 ao "vezDoJogador" alternando entre (1 || X) e (2 || O)
+            //Para marcar corretamente casa escolhida pelo player1 (1 || X) ou pelo player2 (2 || O) é somado +1 ao "vezDoJogador" alternando entre (1 || X) e (2 || O)
             tabu[linha][coluna] = vezDoJogador + 1;
 
             //Incrementa num de jogadas, onde o limite vai ser até 9
             jogadas++;
-
-            exibe_tabuleiro(tabu);
 
 
             if (verifica_campos_preenchidos(tabu)) {
                 System.out.println(jogadores[vezDoJogador] + " ganhou!");
                 break;
             }
-            //Limite de 9 jogadas, resultado em todos campos preenchidos
+            //Limite de 9 jogadas, resultado em todos os campos preenchidos
             if (jogadas == 9) {
                 System.out.println("Empate!");
                 break;
             }
 
-            //Operador ternário: condição? valor se for verdareiro : valor se for falso // se vezDoJogador for 1 ele troca para 0 e vice-versa
+            //Operador ternário: condição? valor se for verdadeiro : valor se for falso // se vezDoJogador for 1 ele troca para 0 e vice-versa
             vezDoJogador = vezDoJogador == 0 ? 1 : 0;
         }
     }
@@ -75,10 +73,11 @@ public class Teste {
 
     //Desenha tabuleiro trocando 1 por X e 2 por O, deixando campos não preenchidos com "-"
     public static void exibe_tabuleiro(int[][] tabu) {
-        System.out.println("Tabuleiro: ");
-        System.out.println("   C1 C2 C3");
+        System.out.println("Tabuleiro:");
+        System.out.println("*****************");
+        System.out.println("\tC1 C2 C3 \t");
         for (int i = 1; i < tabu.length; i++) {
-            System.out.print("L" + i + "|");
+            System.out.print(" L" + i + "|");
             for (int j = 1; j < tabu.length; j++) {
                 if (tabu[i][j] == 1) {
                     System.out.print(" X ");
@@ -90,6 +89,7 @@ public class Teste {
             }
             System.out.println();
         }
+        System.out.println("*****************");
         System.out.println("L = Linha.");
         System.out.println("C = Coluna.");
     }
